@@ -16,11 +16,14 @@ namespace easyBotQaNApi.api.Controllers
 	[RoutePrefix("api/areas")]
 	public class AreasController : ApiController
 	{
-
+		#region constructor
+		
 		public AreasController(IAreasServices _IAreasServices)
 		{
 			_Services = _IAreasServices;
 		}
+		
+		#endregion constructor
 
 		private IAreasServices _Services { get; }
 

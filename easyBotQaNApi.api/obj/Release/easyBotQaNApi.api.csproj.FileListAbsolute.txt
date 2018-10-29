@@ -1,0 +1,234 @@
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.dll.config
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.pdb
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.exe
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.exe
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.AppContext.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Console.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Compression.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Claims.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.ValueTuple.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.exe
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\VBCSCompiler.exe
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Newtonsoft.Json.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Net.Http.Formatting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Helpers.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.WebHost.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Mvc.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Razor.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Razor.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Razor.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Razor.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Helpers.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Mvc.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Newtonsoft.Json.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Net.Http.Formatting.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.WebHost.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Razor.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Http.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csproj.CoreCompileInputs.cache
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csproj.CopyComplete
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.pdb
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Cors.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.Web.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.WebApi.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Cors.dll
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Cors.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.Web.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.WebApi.xml
+C:\Users\Consiss\Desktop\ApplicationBots\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csprojAssemblyReference.cache
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.dll.config
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\easyBotQaNApi.api.pdb
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.exe
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csc.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.exe
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\csi.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.AppContext.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Console.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Compression.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Claims.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.ValueTuple.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.exe
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\vbc.rsp
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\VBCSCompiler.exe
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Antlr3.Runtime.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Cors.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Newtonsoft.Json.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.Web.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.WebApi.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Swashbuckle.Core.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Net.Http.Formatting.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Cors.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Helpers.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.Owin.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.WebHost.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Mvc.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Optimization.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Razor.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Razor.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\WebActivatorEx.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\WebGrease.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Antlr3.Runtime.pdb
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Cors.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.Web.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\SimpleInjector.Integration.WebApi.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Net.Http.Formatting.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.Owin.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Http.WebHost.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Optimization.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Razor.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Webpages.Razor.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Helpers.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\System.Web.Mvc.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Newtonsoft.Json.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Http.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Razor.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csprojAssemblyReference.cache
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csproj.CoreCompileInputs.cache
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.csproj.CopyComplete
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\obj\Release\easyBotQaNApi.api.pdb
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.ObjectBuilder2.dll

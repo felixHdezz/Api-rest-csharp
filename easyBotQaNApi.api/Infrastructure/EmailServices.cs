@@ -4,6 +4,8 @@ using easyBotQaNApi.api.Models;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Net;
+using System.Net.Configuration;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
@@ -37,13 +39,31 @@ namespace easyBotQaNApi.api.Infrastructure
 		public async Task SendAsync(IdentityMessage identityMessage, List<LinkedResource> linkedResources, List<Attachment> attachments)
 		{
 			var client = new SmtpClient();
-			var mailMessage = new MailMessage();
-			mailMessage.From = new MailAddress(MailAddress);
-			mailMessage.To.Add(identityMessage.Destination);
-			mailMessage.Subject = identityMessage.Subject;
-			mailMessage.Body = identityMessage.Body;
-			mailMessage.IsBodyHtml = true;
-			await client.SendMailAsync(mailMessage);
+			//var mailMessage = new MailMessage();
+			//mailMessage.From = new MailAddress(MailAddress);
+			//mailMessage.To.Add(identityMessage.Destination);
+			//mailMessage.Subject = identityMessage.Subject;
+			//mailMessage.Body = identityMessage.Body;
+			//mailMessage.IsBodyHtml = true;
+			//await client.SendMailAsync(mailMessage);
+
+			var smtpSection = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
+			string strHost = smtpSection.Network.Host;
+			int port = smtpSection.Network.Port;
+			string strUserName = smtpSection.Network.UserName;
+			string strFromPass = smtpSection.Network.Password;
+
+			SmtpClient smtp = new SmtpClient(strHost, port);
+			NetworkCredential cert = new NetworkCredential(strUserName, strFromPass);
+			smtp.Credentials = cert;
+			//smtp.EnableSsl = true;
+
+			MailMessage msg = new MailMessage(smtpSection.From, identityMessage.Destination);
+			msg.Subject = identityMessage.Subject;
+			msg.IsBodyHtml = true;
+			msg.Body = identityMessage.Body;
+
+			await smtp.SendMailAsync(msg);
 		}
 
 		public async Task<ContactAreaModel> getDataContact(int IdArea)

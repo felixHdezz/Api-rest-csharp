@@ -13,6 +13,7 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
+using ExcelDataReader;
 
 namespace easyBotQaNApi.api.Controllers
 {
@@ -59,12 +60,17 @@ namespace easyBotQaNApi.api.Controllers
 				for (int i = 0; i < files.Count; i++)
 				{
 					var file = files[i];
+
+					DataTable _table = null;
+
 					BinaryReader reader = new BinaryReader(files[i].InputStream);  //FileUpload1.PostedFile.InputStream)
 					_file = reader.ReadBytes(files[i].ContentLength);
 
-					DataTable _DataReader = ByteBufferToTable(_file, true);
+					_table = ConvertToDataTale(files[i].InputStream);
 
-					result = await services.saveAnswerKnowledge(_DataReader, model);
+					//DataTable _DataReader = ByteBufferToTable(_file, true);
+
+					result = await services.saveAnswerKnowledge(_table, model);
 				}
 			} else {
 				return BadRequest("Nodata");
@@ -91,9 +97,8 @@ namespace easyBotQaNApi.api.Controllers
 
 		#region methods private 
 
-		public static DataTable ByteBufferToTable(byte[] buffer, bool includeHeader)
+		private static DataTable ByteBufferToTable(byte[] buffer, bool includeHeader)
 		{
-			DataTable result = new DataTable();
 			// Se asume que el separador de decimales es punto "." y el de miles "," (aunque este ultimo no se usa) 
 			CultureInfo culture = System.Threading.Thread.CurrentThread.CurrentCulture;
 			System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
@@ -132,16 +137,6 @@ namespace easyBotQaNApi.api.Controllers
 								line = sr.ReadLine();
 								lineArray = line.Split(delimiter);
 							}
-							else
-							{
-								//Agrego columnas con nombre estandar, no se pasa a la siguiente linea del doc
-								for (int j = 0; j < lineArray.Length; j++)
-								{
-									DataColumn c = new DataColumn("Column" + j);
-									dt.Columns.Add(c);
-									indexs.Add("Column" + j, j);
-								}
-							}
 							//Se cambia el estado de esta variable para no volver a chequear el header
 							readHeader = false;
 						}
@@ -179,6 +174,46 @@ namespace easyBotQaNApi.api.Controllers
 					System.Threading.Thread.CurrentThread.CurrentCulture = culture;
 				}
 			}
+		}
+
+		private static DataTable ConvertToDataTale(Stream stream) {
+			DataTable _table = null;
+			DataTable _newTable = new DataTable();
+			string[] header = new string[] { "Pregunta", "Respuesta" };
+
+			using (var _reader = ExcelReaderFactory.CreateOpenXmlReader(stream))
+			{
+				var _result = _reader.AsDataSet();
+				// Ejemplos de acceso a datos
+				_table = _result.Tables[0];
+
+				bool readHeader = true;
+
+				for (var _i = 0; _i < _table.Rows.Count; _i++) {
+					if (readHeader)
+					{
+						foreach (string column in header)
+						{
+							DataColumn c = new DataColumn(column);
+							_newTable.Columns.Add(c);
+						}
+						readHeader = false;
+					}
+					if (!readHeader && _i != 0)
+					{
+						DataRow _newRow = _newTable.NewRow();
+						int _cont = 0;
+						foreach (DataColumn column in _newTable.Columns)
+						{
+							_newRow[column.ColumnName] = _table.Rows[_i][_cont];
+							_cont++;
+						}
+						//Agrega el nuevo row
+						_newTable.Rows.Add(_newRow);
+					}
+				}
+			}
+			return _newTable;
 		}
 
 		#endregion methods private 

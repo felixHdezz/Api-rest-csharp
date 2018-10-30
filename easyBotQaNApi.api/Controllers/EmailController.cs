@@ -23,44 +23,62 @@ namespace easyBotQaNApi.api.Controllers
 			//Initialize constructor
 		}
 
-		[AllowAnonymous]
-		[Route("sendMessage")]
-		[HttpPost]
-		public async Task<IHttpActionResult> sendMessege(MensajeModel model) {
-			//var mailNotifier = ConfigurationManager.AppSettings["mailContact"];
-			var dataContact = await getDataContact(model.idArea);
+		[Route("sendMessage/{IdArea}")]
+		[HttpGet]
+		public async Task<IHttpActionResult> sendMessege(int IdArea)
+		{
+			var dataContact = await getDataContact(IdArea);
 
-			var variables = new Dictionary<string, string>();
-
-			variables.Add("{{ContactName}}", dataContact.ContactName);
-			variables.Add("{{name}}", model.Name);
-			variables.Add("{{email}}", model.Email);
-			variables.Add("{{message}}", model.Question);
-			variables.Add("{{ConfirmationHref}}", model.Url);
-
-			var identityMessage = GetIdentityMessage(dataContact.Email, "Contacto", ResourcePaths.SEND_MESSAGE_TEMPLATE, variables);
-			await EmailService.SendAsync(identityMessage);
-
-			return Ok();
+			return Ok(dataContact);
 		}
 
-		[AllowAnonymous]
-		[Route("sendMessegeToUser")]
-		[HttpPost]
-		public async Task<IHttpActionResult> sendMessegeToUser(MensajeModel model) {
-			var dataContact = await getDataContact(model.idArea);
+		[Route("sendMessageToUser/{User}")]
+		[HttpGet]
+		public async Task<IHttpActionResult> sendMessageToUser(string User)
+		{
+			var dataContact = await getDataUser(User);
 
-			var variables = new Dictionary<string, string>();
-
-			variables.Add("{{name}}", dataContact.ContactName);
-			variables.Add("{{question}}", model.Question);
-			variables.Add("{{answer}}", model.Answer);
-
-			var identityMessage = GetIdentityMessage(dataContact.Email, "Contacto", ResourcePaths.SEND_MESSAGE_USER_TEMPLATE, variables);
-			await EmailService.SendAsync(identityMessage);
-
-			return Ok();
+			return Ok(dataContact);
 		}
+
+		//[AllowAnonymous]
+		//[Route("sendMessage")]
+		//[HttpPost]
+		//public async Task<IHttpActionResult> sendMessege(MensajeModel model) {
+		//	//var mailNotifier = ConfigurationManager.AppSettings["mailContact"];
+		//	//var dataContact = await getDataContact(model.idArea);
+
+		//	var variables = new Dictionary<string, string>();
+
+		//	variables.Add("{{ContactName}}", "Felix Hernandez");
+		//	variables.Add("{{Name}}", model.Name);
+		//	variables.Add("{{Email}}", model.Email);
+		//	variables.Add("{{Message}}", model.Question);
+		//	variables.Add("{{ConfirmationHref}}", model.Url);
+
+		//	var identityMessage = GetIdentityMessage("felix.hernandez@arcacontal.com", "Contacto", ResourcePaths.SEND_MESSAGE_TEMPLATE, variables);
+		//	await EmailService.SendAsync(identityMessage);
+
+		//	return Ok();
+		//}
+
+		//[AllowAnonymous]
+		//[Route("sendMessegeToUser")]
+		//[HttpPost]
+		//public async Task<IHttpActionResult> sendMessegeToUser(MensajeModel model) {
+		//	var dataContact = await getDataContact(model.idArea);
+
+		//	var variables = new Dictionary<string, string>();
+
+		//	//variables.Add("{{name}}", dataContact.ContactName);
+		//	variables.Add("{{Question}}", model.Question);
+		//	variables.Add("{{Answer}}", model.Answer);
+
+		//	var identityMessage = GetIdentityMessage(dataContact.Email, "Contacto", ResourcePaths.SEND_MESSAGE_USER_TEMPLATE, variables);
+		//	await EmailService.SendAsync(identityMessage);
+
+		//	return Ok();
+		//}
 
 	}
 }

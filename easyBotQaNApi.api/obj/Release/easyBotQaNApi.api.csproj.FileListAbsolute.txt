@@ -232,3 +232,7 @@ C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBot
 C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
 C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
 C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\Microsoft.Practices.ObjectBuilder2.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\ExcelDataReader.DataSet.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\ExcelDataReader.dll
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\ExcelDataReader.xml
+C:\Users\Consiss\Desktop\ApplicationBots\api - current\easyBotQaNApi.api\easyBotQaNApi.api\bin\ExcelDataReader.DataSet.xml

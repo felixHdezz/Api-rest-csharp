@@ -53,6 +53,7 @@ namespace easyBotQaNApi.api.Controllers
 				Email = Convert.ToString(HttpContext.Current.Request["Email"]),
 				NombreConocimiento = Convert.ToString(HttpContext.Current.Request["NombreConocimiento"])
 			};
+
 			//Obtiene el archivo excel
 			var files = HttpContext.Current.Request.Files;
 			if (files.Count > 0)
@@ -72,7 +73,9 @@ namespace easyBotQaNApi.api.Controllers
 
 					result = await services.saveAnswerKnowledge(_table, model);
 				}
-			} else {
+			}
+			else
+			{
 				return BadRequest("Nodata");
 			}
 			return Ok();
@@ -93,11 +96,18 @@ namespace easyBotQaNApi.api.Controllers
 			return Ok(result);
 		}
 
-		#endregion methods public
+        [Route("SaveQuestion")]
+        [HttpPost]
+        public async Task<IHttpActionResult> saveQuestion(AddQuestionModel addQuestionModel) {
 
-		#region methods private 
+            return Ok();
+        }
 
-		private static DataTable ByteBufferToTable(byte[] buffer, bool includeHeader)
+        #endregion methods public
+
+        #region methods private 
+
+        private static DataTable ByteBufferToTable(byte[] buffer, bool includeHeader)
 		{
 			// Se asume que el separador de decimales es punto "." y el de miles "," (aunque este ultimo no se usa) 
 			CultureInfo culture = System.Threading.Thread.CurrentThread.CurrentCulture;

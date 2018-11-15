@@ -57,5 +57,12 @@ namespace easyBotQaNApi.api.DataServices.Services
 				return await _dbContext.ExecuteNonQuery("sp_SaveAnswer", parameters);
 			}
 		}
+
+        public async Task<int> addQuestion(AddQuestionModel model) {
+            using (var _dbContext = new DataBaseContext()) {
+                object[] parameters = new object[] { model.IdArea, model.Question, model.Answer, model.Type, model.IsActive };
+                return await _dbContext.ExecuteNonQuery("sp_AddQuestion", parameters);
+            }
+        }
 	}
 }

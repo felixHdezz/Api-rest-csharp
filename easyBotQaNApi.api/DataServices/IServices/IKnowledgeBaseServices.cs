@@ -8,14 +8,16 @@ using System.Web;
 
 namespace easyBotQaNApi.api.DataServices.IServices
 {
-	public interface IKnowledgeBaseServices
-	{
-		Task<int> saveAnswerKnowledge(DataTable _dt, CreateKnowledgeModel model);
+    public interface IKnowledgeBaseServices
+    {
+        Task<int> saveAnswerKnowledge(DataTable _dt, CreateKnowledgeModel model);
 
-		Task<List<QuestionAnswerModel>> GetQuestionAnswersByIdArea(string strArea);
+        Task<List<QuestionAnswerModel>> GetQuestionAnswersByIdArea(string strArea);
 
-		Task<int> updateAreaKeyId(AreaEndPointModel model);
+        Task<int> updateAreaKeyId(AreaEndPointModel model);
 
-		Task<int> saveAnswer(SaveAnswerModel model);
+        Task<int> saveAnswer(SaveAnswerModel model);
+
+        Task<int> addQuestion(AddQuestionModel addQuestionModel);
 	}
 }

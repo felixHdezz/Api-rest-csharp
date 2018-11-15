@@ -12,7 +12,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 {
 	public class KnowledgeBaseServices : IKnowledgeBaseServices
 	{
-		public async Task<int> saveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model)
+		public async Task<int> SaveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model)
 		{
 			using (var _dbContext = new DataBaseContext())
 			{
@@ -41,7 +41,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			return questionAnswerModel;
 		}
 
-		public async Task<int> updateAreaKeyId(AreaEndPointModel model) {
+		public async Task<int> UpdateAreaKeyId(AreaEndPointModel model) {
 			using (var _dbContext = new DataBaseContext())
 			{
 				object[] parameters = new object[] { model.KeyId, model.Area };
@@ -49,7 +49,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			}
 		}
 
-		public async Task<int> saveAnswer(SaveAnswerModel model)
+		public async Task<int> SaveAnswer(SaveAnswerModel model)
 		{
 			using (var _dbContext = new DataBaseContext())
 			{
@@ -58,7 +58,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			}
 		}
 
-        public async Task<int> addQuestion(AddQuestionModel model) {
+        public async Task<int> AddQuestion(AddQuestionModel model) {
             using (var _dbContext = new DataBaseContext()) {
                 object[] parameters = new object[] { model.IdArea, model.Question, model.Answer, model.Type, model.IsActive };
                 return await _dbContext.ExecuteNonQuery("sp_AddQuestion", parameters);

@@ -71,7 +71,7 @@ namespace easyBotQaNApi.api.Controllers
 
 					//DataTable _DataReader = ByteBufferToTable(_file, true);
 
-					result = await services.saveAnswerKnowledge(_table, model);
+					result = await services.SaveAnswerKnowledge(_table, model);
 				}
 			}
 			else
@@ -84,7 +84,7 @@ namespace easyBotQaNApi.api.Controllers
 		[Route("updateAreaKeyId")]
 		[HttpPost]
 		public async Task<IHttpActionResult> updateAreaKeyId(AreaEndPointModel model) {
-			var result = await services.updateAreaKeyId(model);
+			var result = await services.UpdateAreaKeyId(model);
 			return Ok(result);
 		}
 
@@ -92,15 +92,15 @@ namespace easyBotQaNApi.api.Controllers
 		[HttpPost]
 		public async Task<IHttpActionResult> saveAnswer(SaveAnswerModel model)
 		{
-			var result = await services.saveAnswer(model);
+			var result = await services.SaveAnswer(model);
 			return Ok(result);
 		}
 
         [Route("SaveQuestion")]
         [HttpPost]
         public async Task<IHttpActionResult> saveQuestion(AddQuestionModel addQuestionModel) {
-
-            return Ok();
+            var result = await services.AddQuestion(addQuestionModel);
+            return Ok(result);
         }
 
         #endregion methods public

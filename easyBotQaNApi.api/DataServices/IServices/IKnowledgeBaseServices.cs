@@ -10,14 +10,14 @@ namespace easyBotQaNApi.api.DataServices.IServices
 {
     public interface IKnowledgeBaseServices
     {
-        Task<int> saveAnswerKnowledge(DataTable _dt, CreateKnowledgeModel model);
+        Task<int> SaveAnswerKnowledge(DataTable _dt, CreateKnowledgeModel model);
 
         Task<List<QuestionAnswerModel>> GetQuestionAnswersByIdArea(string strArea);
 
-        Task<int> updateAreaKeyId(AreaEndPointModel model);
+        Task<int> UpdateAreaKeyId(AreaEndPointModel model);
 
-        Task<int> saveAnswer(SaveAnswerModel model);
+        Task<int> SaveAnswer(SaveAnswerModel model);
 
-        Task<int> addQuestion(AddQuestionModel addQuestionModel);
+        Task<int> AddQuestion(AddQuestionModel addQuestionModel);
 	}
 }

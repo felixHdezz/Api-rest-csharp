@@ -88,5 +88,12 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
             return _environments;
         }
+
+        public async Task<int> Crud_Environment(EnvironmentsModel model) {
+            using (var _dbContext = new DataBaseContext()) {
+                object[] parameters = new object[] { model.Id, model.Environment, model.HostName, model.EndPointKey, model.Username, model.Password, model.IsActive };
+                return await _dbContext.ExecuteNonQuery("sp_CRUD_Environment", parameters);
+            }
+        }
 	}
 }

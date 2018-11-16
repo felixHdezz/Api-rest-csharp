@@ -116,6 +116,14 @@ namespace easyBotQaNApi.api.Controllers
             }
         }
 
+        [Route("crud_environment")]
+        [HttpPost]
+        public async Task<IHttpActionResult> crud_environment(EnvironmentsModel model) {
+            var result = await services.Crud_Environment(model);
+            return Ok(result);
+        }
+
+
         #endregion methods public
 
         #region methods private 

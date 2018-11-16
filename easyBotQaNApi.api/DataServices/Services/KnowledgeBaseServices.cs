@@ -95,5 +95,14 @@ namespace easyBotQaNApi.api.DataServices.Services
                 return await _dbContext.ExecuteNonQuery("sp_CRUD_Environment", parameters);
             }
         }
-	}
+
+        public async Task<int> UpdateStatusEnv(int IdEnv, int Status)
+        {
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { IdEnv, Status };
+                return await _dbContext.ExecuteNonQuery("sp_UpdateStatusEnvironment", parameters);
+            }
+        }
+    }
 }

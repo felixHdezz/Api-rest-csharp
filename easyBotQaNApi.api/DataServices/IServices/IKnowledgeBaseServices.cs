@@ -57,6 +57,8 @@ namespace easyBotQaNApi.api.DataServices.IServices
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<int> Crud_Environment(EnvironmentsModel model)
+        Task<int> Crud_Environment(EnvironmentsModel model);
+
+        Task<int> UpdateStatusEnv(int IdEnv, int Status);
     }
 }

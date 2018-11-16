@@ -123,6 +123,14 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
+        [Route("UpdateStatusAEnv")]
+        [HttpPost]
+        public async Task<IHttpActionResult> UpdateStatusAEnv(int Id, int Status)
+        {
+            var result = await services.UpdateStatusEnv(Id, Status);
+            return Ok(result);
+        }
+
 
         #endregion methods public
 

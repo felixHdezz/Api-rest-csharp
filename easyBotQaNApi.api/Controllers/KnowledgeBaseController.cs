@@ -103,6 +103,19 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
+        [Route("getEnvironments")]
+        [HttpGet]
+        public async Task<IHttpActionResult> getEnvironments() {
+            try
+            {
+                var result = await services.GetEnvironments();
+                return Ok(result);
+            }
+            catch (Exception ex) {
+                return Ok(ex.Message.ToString());
+            }
+        }
+
         #endregion methods public
 
         #region methods private 

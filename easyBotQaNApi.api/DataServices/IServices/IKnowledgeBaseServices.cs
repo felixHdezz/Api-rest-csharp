@@ -19,5 +19,8 @@ namespace easyBotQaNApi.api.DataServices.IServices
         Task<int> SaveAnswer(SaveAnswerModel model);
 
         Task<int> AddQuestion(AddQuestionModel addQuestionModel);
-	}
+
+        Task<List<EnvironmentsModel>> GetEnvironments();
+
+    }
 }

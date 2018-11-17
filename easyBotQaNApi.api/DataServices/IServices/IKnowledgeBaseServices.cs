@@ -60,5 +60,9 @@ namespace easyBotQaNApi.api.DataServices.IServices
         Task<int> Crud_Environment(EnvironmentsModel model);
 
         Task<int> UpdateStatusEnv(int IdEnv, int Status);
+
+        Task<List<QnAMakerEndpointModel>> GetEndPointQaNMaker(string username);
+
+        Task<OrganizationUnitModel> GetOrganization(string OrgUnit);
     }
 }

@@ -104,5 +104,40 @@ namespace easyBotQaNApi.api.DataServices.Services
                 return await _dbContext.ExecuteNonQuery("sp_UpdateStatusEnvironment", parameters);
             }
         }
+
+        public async Task<List<QnAMakerEndpointModel>> GetEndPointQaNMaker(string username) {
+            var _list_endPoint = new List<QnAMakerEndpointModel>();
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { username };
+                var result = await _dbContext.ExecuteReader("sp_GetEndPointByUser", parameters);
+                while (result.Read())
+                {
+                    QnAMakerEndpointModel endpoint = new QnAMakerEndpointModel();
+                    endpoint.qnaAuthKey = result.GetString(0);
+                    endpoint.qnaKBId = result.GetString(1);
+                    endpoint.endpointHostName = result.GetString(2);
+
+                    _list_endPoint.Add(endpoint);
+                }
+            }
+            return _list_endPoint;
+        }
+
+        public async Task<OrganizationUnitModel> GetOrganization(string OrgUnit) {
+            var _OrganizationU = new OrganizationUnitModel();
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { OrgUnit };
+                var result = await _dbContext.ExecuteReader("sp_GetDataOrgUnit", parameters);
+                while (result.Read())
+                {
+                    _OrganizationU.Name = result[0].ToString();
+                    _OrganizationU.Type = result[1].ToString();
+                    _OrganizationU.IsActive = result.GetBoolean(2);
+                }
+            }
+            return _OrganizationU;
+        }
     }
 }

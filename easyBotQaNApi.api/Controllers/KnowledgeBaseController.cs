@@ -132,6 +132,24 @@ namespace easyBotQaNApi.api.Controllers
         }
 
 
+        [Route("GetEndPointQaNMaker/{username}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetEndPointQaNMaker(string username)
+        {
+            var result = await services.GetEndPointQaNMaker(username);
+            return Ok(result);
+        }
+
+
+        [Route("GetOrganization/{OrgUnit}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetOrganization(string OrgUnit)
+        {
+            var result = await services.GetOrganization(OrgUnit);
+            return Ok(result);
+        }
+
+
         #endregion methods public
 
         #region methods private 

@@ -15,8 +15,8 @@ namespace easyBotQaNApi.api.DataServices
 			//Se agrego nueva referencia para el log de registros
 			dictionary.Add(typeof(IAreasServices), typeof(AreasServices));
 			dictionary.Add(typeof(IKnowledgeBaseServices), typeof(KnowledgeBaseServices));
-
-			return dictionary;
+            dictionary.Add(typeof(IRegionsService), typeof(RegionsService));
+            return dictionary;
 		}
 	}
 }

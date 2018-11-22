@@ -12,6 +12,31 @@ namespace easyBotQaNApi.api.DataServices.Services
 {
     public class KnowledgeBaseServices : IKnowledgeBaseServices
     {
+        public async Task<List<KnowledgeBasesModel>> GetKnowledgesBases() {
+            List<KnowledgeBasesModel> _knowledgeBases = new List<KnowledgeBasesModel>();
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { };
+                var dReader = await _dbContext.ExecuteReader("sp_GetAreasEnv", parameters);
+                while (dReader.Read())
+                {
+                    _knowledgeBases.Add(new KnowledgeBasesModel() {
+                        Id =  Convert.ToInt32(dReader[0]),
+                        KnowledgeBase = dReader[1].ToString(),
+                        Description = dReader[2].ToString(),
+                        KeyId = dReader[3].ToString(),
+                        Id_contact = Convert.ToInt32(dReader[4]),
+                        Contact = dReader[5].ToString(),
+                        LastName = dReader[6].ToString(),
+                        Email = dReader[7].ToString(),
+                        Id_env = Convert.ToInt32(dReader[8]),
+                        Environment = dReader[9].ToString()
+                    });
+                }
+            }
+            return _knowledgeBases;
+        }
+
         public async Task<int> SaveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model)
         {
             using (var _dbContext = new DataBaseContext())
@@ -39,6 +64,24 @@ namespace easyBotQaNApi.api.DataServices.Services
                 }
             }
             return questionAnswerModel;
+        }
+
+        public async Task<int> UpdateKnowledgeBase(KnowledgeBasesModel model)
+        {
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { model.Id, model.Id_contact, model.Contact, model.LastName, model.Email, model.Id_env };
+                return await _dbContext.ExecuteNonQuery("sp_UpdateKnowledgeBase", parameters);
+            }
+        }
+
+        public async Task<int> DeleteKnowledgeBase(int id)
+        {
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { id };
+                return await _dbContext.ExecuteNonQuery("sp_DeleteKnowledgeBase", parameters);
+            }
         }
 
         public async Task<int> UpdateAreaKeyId(AreaEndPointModel model) {
@@ -105,21 +148,26 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
         }
 
-        public async Task<List<QnAMakerEndpointModel>> GetEndPointQaNMaker(string username) {
-            var _list_endPoint = new List<QnAMakerEndpointModel>();
+        public async Task<EndPointsModel> GetEndPointQaNMaker(string username) {
+            var _list_endPoint = new EndPointsModel();
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { username };
                 var result = await _dbContext.ExecuteReader("sp_GetEndPointByUser", parameters);
+                List<EnviromentEndpointModel> endpoint = new List<EnviromentEndpointModel>();
                 while (result.Read())
                 {
-                    QnAMakerEndpointModel endpoint = new QnAMakerEndpointModel();
-                    endpoint.qnaAuthKey = result.GetString(0);
-                    endpoint.qnaKBId = result.GetString(1);
-                    endpoint.endpointHostName = result.GetString(2);
-
-                    _list_endPoint.Add(endpoint);
+                    endpoint.Add(new EnviromentEndpointModel
+                    {
+                        environment = result.GetString(0),
+                        qnaAuthKey = result.GetString(1),
+                        qnaKBId = result.GetString(2),
+                        endpointHostName = result.GetString(3),
+                        username = result.GetString(4),
+                        password = result.GetString(5)
+                    });
                 }
+                _list_endPoint.endpoints = endpoint;
             }
             return _list_endPoint;
         }

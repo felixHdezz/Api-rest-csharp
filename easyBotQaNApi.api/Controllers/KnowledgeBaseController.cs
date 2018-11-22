@@ -17,27 +17,48 @@ using ExcelDataReader;
 
 namespace easyBotQaNApi.api.Controllers
 {
-	[RoutePrefix("api/knowledgebase")]
-	public class KnowledgeBaseController : ApiController
-	{
-		#region constructor
+    [RoutePrefix("api/knowledgebase")]
+    public class KnowledgeBaseController : ApiController
+    {
+        #region constructor
 
-		public KnowledgeBaseController(IKnowledgeBaseServices knowledgeBaseServices) {
-			services = knowledgeBaseServices;
-		}
-		#endregion constructor
+        public KnowledgeBaseController(IKnowledgeBaseServices knowledgeBaseServices) {
+            services = knowledgeBaseServices;
+        }
+        #endregion constructor
 
-		public IKnowledgeBaseServices services { get; set; }
+        public IKnowledgeBaseServices services { get; set; }
 
-		#region methods public
+        #region methods public
 
-		[Route("{strArea}")]
-		[HttpGet]
-		public async Task<IHttpActionResult> Get(string strArea)
-		{
-			var result = await services.GetQuestionAnswersByIdArea(strArea);
-			return Ok(result);
-		}
+        [Route]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get() {
+            var result = await services.GetKnowledgesBases();
+            return Ok(result);
+        }
+
+        [Route("{strArea}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(string strArea)
+        {
+            var result = await services.GetQuestionAnswersByIdArea(strArea);
+            return Ok(result);
+        }
+
+        [Route]
+        [HttpPut]
+        public async Task<IHttpActionResult> Put(KnowledgeBasesModel model) {
+            var result = await services.UpdateKnowledgeBase(model);
+            return Ok(result);
+        }
+
+        [Route("{id:int}")]
+        [HttpDelete]
+        public async Task<IHttpActionResult> Delete(int id) {
+            var result = await services.DeleteKnowledgeBase(id);
+            return Ok(result);
+        }
 
 		[Route("createKnowledge")]
 		[HttpPost]

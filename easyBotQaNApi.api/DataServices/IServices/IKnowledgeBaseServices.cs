@@ -10,6 +10,13 @@ namespace easyBotQaNApi.api.DataServices.IServices
 {
     public interface IKnowledgeBaseServices
     {
+
+        Task<List<KnowledgeBasesModel>> GetKnowledgesBases();
+
+        Task<int> UpdateKnowledgeBase(KnowledgeBasesModel model);
+
+        Task<int> DeleteKnowledgeBase(int id);
+
         /// <summary>
         /// Crea un base de conocimiento en QnAMaker y guarda la  informacion a la base de datos
         /// </summary>
@@ -61,7 +68,7 @@ namespace easyBotQaNApi.api.DataServices.IServices
 
         Task<int> UpdateStatusEnv(int IdEnv, int Status);
 
-        Task<List<QnAMakerEndpointModel>> GetEndPointQaNMaker(string username);
+        Task<EndPointsModel> GetEndPointQaNMaker(string username);
 
         Task<OrganizationUnitModel> GetOrganization(string OrgUnit);
     }

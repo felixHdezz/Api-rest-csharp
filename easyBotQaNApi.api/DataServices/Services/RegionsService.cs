@@ -17,7 +17,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { };
-                var dReader = await _dbContext.ExecuteReader("sp_GetRegions", parameters);
+                var dReader = await _dbContext.ExecuteReaderAsync("sp_GetRegions", parameters);
                 while (dReader.Read())
                 {
                     regionsModel.Add(new RegionsModel()
@@ -37,7 +37,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.Id, model.IsActive};
-                return  await _dbContext.ExecuteNonQuery("sp_UpdateRegion", parameters);
+                return  await _dbContext.ExecuteNonQueryAsync("sp_UpdateRegion", parameters);
             }
         }
     }

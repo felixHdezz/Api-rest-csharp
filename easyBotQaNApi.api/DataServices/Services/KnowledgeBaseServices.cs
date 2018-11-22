@@ -17,7 +17,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { };
-                var dReader = await _dbContext.ExecuteReader("sp_GetAreasEnv", parameters);
+                var dReader = await _dbContext.ExecuteReaderAsync("sp_GetAreasEnv", parameters);
                 while (dReader.Read())
                 {
                     _knowledgeBases.Add(new KnowledgeBasesModel() {
@@ -42,7 +42,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.NombreResponsable, model.Apellidos, model.Telefono, model.Email, model.NombreConocimiento, _dTable };
-                return await _dbContext.ExecuteNonQuery("sp_CreateKnowledgeBase", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_CreateKnowledgeBase", parameters);
             }
         }
 
@@ -51,7 +51,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { strArea };
-                var dReader = await _dbContext.ExecuteReader("sp_GetQuestionAnswerByArea", parameters);
+                var dReader = await _dbContext.ExecuteReaderAsync("sp_GetQuestionAnswerByArea", parameters);
                 while (dReader.Read())
                 {
                     var question = new QuestionAnswerModel();
@@ -71,7 +71,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.Id, model.Id_contact, model.Contact, model.LastName, model.Email, model.Id_env };
-                return await _dbContext.ExecuteNonQuery("sp_UpdateKnowledgeBase", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_UpdateKnowledgeBase", parameters);
             }
         }
 
@@ -80,7 +80,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { id };
-                return await _dbContext.ExecuteNonQuery("sp_DeleteKnowledgeBase", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_DeleteKnowledgeBase", parameters);
             }
         }
 
@@ -88,7 +88,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.KeyId, model.Area };
-                return await _dbContext.ExecuteNonQuery("sp_UpdatekeyIdAreaByName", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_UpdatekeyIdAreaByName", parameters);
             }
         }
 
@@ -97,14 +97,14 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.question, model.answer, model.idArea };
-                return await _dbContext.ExecuteNonQuery("sp_SaveAnswer", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_SaveAnswer", parameters);
             }
         }
 
         public async Task<int> AddQuestion(AddQuestionModel model) {
             using (var _dbContext = new DataBaseContext()) {
                 object[] parameters = new object[] { model.IdArea, model.Question, model.Answer, model.Type, model.IsActive };
-                return await _dbContext.ExecuteNonQuery("sp_AddQuestion", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_AddQuestion", parameters);
             }
         }
 
@@ -113,7 +113,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { };
-                var _dReader = await _dbContext.ExecuteReader("sp_GetEnvironments", parameters);
+                var _dReader = await _dbContext.ExecuteReaderAsync("sp_GetEnvironments", parameters);
 
                 while (_dReader.Read())
                 {
@@ -135,7 +135,7 @@ namespace easyBotQaNApi.api.DataServices.Services
         public async Task<int> Crud_Environment(EnvironmentsModel model) {
             using (var _dbContext = new DataBaseContext()) {
                 object[] parameters = new object[] { model.Id, model.Environment, model.HostName, model.EndPointKey, model.Username, model.Password, model.IsActive };
-                return await _dbContext.ExecuteNonQuery("sp_CRUD_Environment", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_CRUD_Environment", parameters);
             }
         }
 
@@ -144,7 +144,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { IdEnv, Status };
-                return await _dbContext.ExecuteNonQuery("sp_UpdateStatusEnvironment", parameters);
+                return await _dbContext.ExecuteNonQueryAsync("sp_UpdateStatusEnvironment", parameters);
             }
         }
 
@@ -153,7 +153,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { username };
-                var result = await _dbContext.ExecuteReader("sp_GetEndPointByUser", parameters);
+                var result = await _dbContext.ExecuteReaderAsync("sp_GetEndPointByUser", parameters);
                 List<EnviromentEndpointModel> endpoint = new List<EnviromentEndpointModel>();
                 while (result.Read())
                 {
@@ -177,7 +177,7 @@ namespace easyBotQaNApi.api.DataServices.Services
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { OrgUnit };
-                var result = await _dbContext.ExecuteReader("sp_GetDataOrgUnit", parameters);
+                var result = await _dbContext.ExecuteReaderAsync("sp_GetDataOrgUnit", parameters);
                 while (result.Read())
                 {
                     _OrganizationU.Name = result[0].ToString();

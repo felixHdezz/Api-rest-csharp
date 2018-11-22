@@ -34,7 +34,7 @@ namespace easyBotQaNApi.api.DataServices.Context
 			defaultDB.Open();
 		}
 
-		public async Task<SqlDataReader> ExecuteReader(string StoreProcName, params object[] parametersValue) {
+		public async Task<SqlDataReader> ExecuteReaderAsync(string StoreProcName, params object[] parametersValue) {
 			using (var _sCommand = new SqlCommand(StoreProcName, defaultDB))
 			{
 				_sCommand.CommandType = CommandType.StoredProcedure;
@@ -51,7 +51,7 @@ namespace easyBotQaNApi.api.DataServices.Context
 			}
 		}
 
-		public async Task<int> ExecuteNonQuery(string strStoreProcName, params object[] parametersValue)
+		public async Task<int> ExecuteNonQueryAsync(string strStoreProcName, params object[] parametersValue)
 		{
 			using (var _sCommand = new SqlCommand(strStoreProcName, defaultDB))
 			{

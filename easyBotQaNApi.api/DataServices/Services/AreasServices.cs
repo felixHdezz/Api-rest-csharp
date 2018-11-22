@@ -17,7 +17,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			using (var _context = new DataBaseContext())
 			{
 				object[] parameters = new object[] { };
-				var dReader = await _context.ExecuteReader("SP_GETAreas", parameters);
+				var dReader = await _context.ExecuteReaderAsync("SP_GETAreas", parameters);
 				while (dReader.Read())
 				{
 					var area = new AreasModel();
@@ -36,7 +36,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			using (var _context = new DataBaseContext())
 			{
 				object[] parameters = new object[] { id };
-				var dReader = await _context.ExecuteReader("sp_GetKeyIdArea", parameters);
+				var dReader = await _context.ExecuteReaderAsync("sp_GetKeyIdArea", parameters);
 				while (dReader.Read())
 				{
 					areaEndPointModel.Area = dReader.GetString(0);
@@ -51,7 +51,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			using (var _context = new DataBaseContext())
 			{
 				object[] parameters = new object[] { idArea };
-				return await _context.ExecuteNonQuery("SP_UpdateEndPointTest", parameters);
+				return await _context.ExecuteNonQueryAsync("SP_UpdateEndPointTest", parameters);
 			}
 		}
 
@@ -60,7 +60,7 @@ namespace easyBotQaNApi.api.DataServices.Services
 			using (var _context = new DataBaseContext())
 			{
 				object[] parameters = new object[] { userArea.name, userArea.userName, userArea.email, userArea.idArea };
-				return await _context.ExecuteNonQuery("sp_updateUserArea", parameters);
+				return await _context.ExecuteNonQueryAsync("sp_updateUserArea", parameters);
 			}
 		}
 

@@ -72,7 +72,7 @@ namespace easyBotQaNApi.api.Infrastructure
 			using (var _context = new DataBaseContext())
 			{
 				object[] parameter = new object[] { IdArea };
-				var dReader = await _context.ExecuteReader("sp_GetAreaContact", parameter);
+				var dReader = await _context.ExecuteReaderAsync("sp_GetAreaContact", parameter);
 				while (dReader.Read())
 				{
 					model.ContactName = dReader.GetString(0);
@@ -89,7 +89,7 @@ namespace easyBotQaNApi.api.Infrastructure
 			{
 				var strQuery = "EXEC sp_GetDataUser '" + username + "'";
 				object[] parameter = new object[] { username };
-				var dReader = await _context.ExecuteReader("sp_GetDataUser", parameter);
+				var dReader = await _context.ExecuteReaderAsync("sp_GetDataUser", parameter);
 				while (dReader.Read())
 				{
 					model.ContactName = dReader.GetString(0);

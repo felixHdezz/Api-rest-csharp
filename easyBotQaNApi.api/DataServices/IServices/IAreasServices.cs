@@ -17,5 +17,7 @@ namespace easyBotQaNApi.api.DataServices.IServices
 		Task<int> updateAreaByuser(int idArea);
 
 		Task<int> registerUserArea(registerUserAreaModel userArea);
-	}
+
+        Task<List<AreasKeyIdModel>> GetKeyId(string IdAreas);
+    }
 }

@@ -71,5 +71,7 @@ namespace easyBotQaNApi.api.DataServices.IServices
         Task<EndPointsModel> GetEndPointQaNMaker(string username);
 
         Task<OrganizationUnitModel> GetOrganization(string OrgUnit);
+
+        Task<string> GetAnswerForUser(GetMessage model);
     }
 }

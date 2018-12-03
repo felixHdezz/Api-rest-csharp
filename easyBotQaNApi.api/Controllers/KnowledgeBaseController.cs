@@ -170,6 +170,14 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
+        [Route("getMessage")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAnswerForUser(GetMessage model)
+        {
+            var result = await services.GetAnswerForUser(model);
+            return Ok();
+        }
+
 
         #endregion methods public
 

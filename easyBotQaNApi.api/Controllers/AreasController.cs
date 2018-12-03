@@ -65,25 +65,12 @@ namespace easyBotQaNApi.api.Controllers
 			}
 		}
 
-		[Route("getUserLogon")]
-		[HttpPost]
-		public IHttpActionResult getUserLogon()
-		{
-			var userName = HttpContext.Current.User.Identity.Name.ToString();
-			return Ok(userName);
-		}
+        [Route("GetKeyId/{IdAreas}")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetKeyId(string IdAreas) {
+            var _result = await _Services.GetKeyId(IdAreas);
+            return Ok(_result);
+        }
 
-		[Route("getUserCurrent")]
-		[HttpGet]
-		public IHttpActionResult getUserCurrent() {
-			var user = HttpContext.Current.User.Identity.Name.ToString();
-			return Ok(user);
-		}
-
-		[HttpPut]
-		public IHttpActionResult Put()
-		{
-			return Ok();
-		}
-	}
+    }
 }

@@ -187,5 +187,19 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
             return _OrganizationU;
         }
+
+        public async Task<string> GetAnswerForUser(GetMessage model) {
+            var strMessage = string.Empty;
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { model.IdQuestion, model.Region, model.IdArea };
+                var result = await _dbContext.ExecuteReaderAsync("sp_GetAnswerForUser", parameters);
+                while (result.Read())
+                {
+                    strMessage = result[0].ToString();
+                }
+            }
+            return strMessage;
+        }
     }
 }

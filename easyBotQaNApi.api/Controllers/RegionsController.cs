@@ -32,12 +32,44 @@ namespace easyBotQaNApi.api.Controllers
         public async Task<IHttpActionResult> Get() {
             try
             {
-                var result = await services.GetRegions();
+                var result = await services.GetRegionsTest();
                 return Ok(result);
             }
             catch (Exception ex) {
                 return Ok(ex.Message.ToString());
             }
+        }
+
+        [Route("{areas}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(string areas)
+        {
+            //var result = await services.AddRegions(model);
+            return Ok();
+        }
+
+        [Route]
+        [HttpPost]
+        public async Task<IHttpActionResult> Post(RegionsModel model)
+        {
+            var result = await services.SaveNewRegion(model);
+            return Ok(result);
+        }
+
+        [Route("savequestion")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveNewQuestion(RegionsModel model)
+        {
+            var result = await services.SaveNewRegion(model);
+            return Ok(result);
+        }
+
+        [Route("savenewquestion")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveNewQuestion(SaveNewQuestion model)
+        {
+            var result = await services.SaveNewQuestion(model);
+            return Ok(result);
         }
 
         [Route]
@@ -47,6 +79,7 @@ namespace easyBotQaNApi.api.Controllers
             var result = await services.UpdateRegion(model);
             return Ok(result);
         }
+
 
         #endregion methods public
     }

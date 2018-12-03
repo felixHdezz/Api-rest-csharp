@@ -10,4 +10,8 @@ namespace easyBotQaNApi.api.Models
 		public int id { get; set; }
 		public string area { get; set; }
 	}
+
+    public class AreasKeyIdModel {
+        public string KeId { get; set; }
+    }
 }

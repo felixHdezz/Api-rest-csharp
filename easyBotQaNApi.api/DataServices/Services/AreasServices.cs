@@ -64,9 +64,27 @@ namespace easyBotQaNApi.api.DataServices.Services
 			}
 		}
 
-		#region IDisposable Support
+        public async Task<List<AreasKeyIdModel>> GetKeyId(string IdAreas)
+        {
+            var _keyIds = new List<AreasKeyIdModel>();
+            using (var _context = new DataBaseContext())
+            {
+                object[] parameters = new object[] { IdAreas };
+                var _reader = await _context.ExecuteReaderAsync("sp_GetKeyId", parameters);
+                while (_reader.Read())
+                {
+                    _keyIds.Add(new AreasKeyIdModel
+                    {
+                        KeId = _reader[0].ToString()
+                    });
+                }
+            }
+            return _keyIds;
+        }
 
-		private bool disposedValue = false;
+        #region IDisposable Support
+
+        private bool disposedValue = false;
 
 		public void Dispose()
 		{

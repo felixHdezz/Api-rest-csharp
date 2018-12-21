@@ -16,6 +16,9 @@ namespace easyBotQaNApi.api.DataServices
 			dictionary.Add(typeof(IAreasServices), typeof(AreasServices));
 			dictionary.Add(typeof(IKnowledgeBaseServices), typeof(KnowledgeBaseServices));
             dictionary.Add(typeof(IRegionsService), typeof(RegionsService));
+            dictionary.Add(typeof(IUsersService), typeof(UsersService));
+            dictionary.Add(typeof(IAuthenticateService), typeof(AuthenticateService));
+
             return dictionary;
 		}
 	}

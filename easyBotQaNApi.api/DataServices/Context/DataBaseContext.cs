@@ -42,11 +42,6 @@ namespace easyBotQaNApi.api.DataServices.Context
 				if (_dSet.Tables.Count > 0)
 				{
                     _sCommand.Parameters.AddRange(setParameters(_dSet, parametersValue));
-                    //var table = _dSet.Tables[0];
-                    //for (var _i = 0; _i < table.Rows.Count; _i++)
-                    //{
-                    //	_sCommand.Parameters.AddWithValue(table.Rows[_i][0].ToString(), parametersValue[_i]);
-                    //}
                 }
 				return await _sCommand.ExecuteReaderAsync();
 			}
@@ -62,11 +57,6 @@ namespace easyBotQaNApi.api.DataServices.Context
                 if (_dSet.Tables.Count > 0)
 				{
                     _sCommand.Parameters.AddRange(setParameters(_dSet, parametersValue));
-                    //var table = _dSet.Tables[0];
-					//for (var _i = 0; _i < table.Rows.Count; _i++)
-					//{
-					//	_sCommand.Parameters.AddWithValue(table.Rows[_i][0].ToString(), parametersValue[_i]);
-					//}
 				}
 				return await _sCommand.ExecuteNonQueryAsync();
 			}
@@ -91,13 +81,6 @@ namespace easyBotQaNApi.api.DataServices.Context
             var table = _dataSet.Tables[0];
             for (var _i = 0; _i < table.Rows.Count; _i++)
             {
-                //SqlParameter[] sqlParameters = {
-                //    new SqlParameter(table.Rows[_i][0].ToString(), _parameters[_i])
-                //};
-                //var _sqlParameters = new SqlParameter();
-                //_sqlParameters.ParameterName = table.Rows[_i][0].ToString();
-                //_sqlParameters.Value = _parameters[_i];
-                ////_sqlParametersArray[_i] = _parameters;
                 sqlParameters[_i] = new SqlParameter(table.Rows[_i][0].ToString(), _parameters[_i]);
             }
 

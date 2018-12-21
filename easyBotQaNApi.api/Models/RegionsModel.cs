@@ -28,7 +28,7 @@ namespace easyBotQaNApi.api.Models
     }
     public class SaveNewQuestion
     {
-        public int Question { get; set; }
+        public string Question { get; set; }
         public string Answer { get; set; }
         public int IdArea { get; set; }
         public string IdRegions { get; set; }

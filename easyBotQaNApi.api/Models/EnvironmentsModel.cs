@@ -17,6 +17,7 @@ namespace easyBotQaNApi.api.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public int IsActive { get; set; }
+        public string Score { get; set; }
     }
 
     public class EnvironmentModel {

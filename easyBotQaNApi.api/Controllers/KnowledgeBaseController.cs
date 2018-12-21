@@ -2,6 +2,7 @@
 using easyBotQaNApi.api.DataServices.IServices;
 using easyBotQaNApi.api.DataServices.Services;
 using easyBotQaNApi.api.Models;
+using easyBotQaNApi.api.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace easyBotQaNApi.api.Controllers
         public IKnowledgeBaseServices services { get; set; }
 
         #region methods public
-
+        [Authorize]
         [Route]
         [HttpGet]
         public async Task<IHttpActionResult> Get() {
@@ -60,48 +61,56 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
-		[Route("createKnowledge")]
-		[HttpPost]
-		public async Task<IHttpActionResult> createKnowledge()
-		{
-			byte[] _file = null;
-			var result = 0;
-			CreateKnowledgeModel model = new CreateKnowledgeModel
-			{
-				NombreResponsable = Convert.ToString(HttpContext.Current.Request["NombreResponsable"]),
-				Apellidos = Convert.ToString(HttpContext.Current.Request["Apellidos"]),
-				Telefono = Convert.ToString(HttpContext.Current.Request["Telefono"]),
-				Email = Convert.ToString(HttpContext.Current.Request["Email"]),
-				NombreConocimiento = Convert.ToString(HttpContext.Current.Request["NombreConocimiento"])
-			};
+        [Authorize]
+        [Route("createKnowledge")]
+        [HttpPost]
+        public async Task<IHttpActionResult> createKnowledge()
+        {
+            byte[] _file = null;
+            var result = new List<QuestionAnswerModel>();
+            CreateKnowledgeModel model = new CreateKnowledgeModel
+            {
+                NombreResponsable = Convert.ToString(HttpContext.Current.Request["NombreResponsable"]),
+                Apellidos = Convert.ToString(HttpContext.Current.Request["Apellidos"]),
+                Telefono = Convert.ToString(HttpContext.Current.Request["Telefono"]),
+                Email = Convert.ToString(HttpContext.Current.Request["Email"]),
+                NombreConocimiento = Convert.ToString(HttpContext.Current.Request["NombreConocimiento"])
+            };
+            //Obtiene el archivo excel
+            var files = HttpContext.Current.Request.Files;
 
-			//Obtiene el archivo excel
-			var files = HttpContext.Current.Request.Files;
-			if (files.Count > 0)
-			{
-				for (int i = 0; i < files.Count; i++)
-				{
-					var file = files[i];
+            if (files.Count > 0)
+            {
+                for (int i = 0; i < files.Count; i++)
+                {
+                    var file = files[i];
 
-					DataTable _table = null;
+                    DataTable _table = null;
 
-					BinaryReader reader = new BinaryReader(files[i].InputStream);  //FileUpload1.PostedFile.InputStream)
-					_file = reader.ReadBytes(files[i].ContentLength);
+                    BinaryReader reader = new BinaryReader(files[i].InputStream);  //FileUpload1.PostedFile.InputStream)
+                    _file = reader.ReadBytes(files[i].ContentLength);
 
-					_table = ConvertToDataTale(files[i].InputStream);
+                    _table = ConvertToDataTale(files[i].InputStream);
+                    //DataTable _DataReader = ByteBufferToTable(_file, true);
 
-					//DataTable _DataReader = ByteBufferToTable(_file, true);
+                    try
+                    {
+                        result = await services.SaveAnswerKnowledge(_table, model);
+                    }
+                    catch (Exception ex) {
+                        return Ok(ex.Message.ToString());
+                    }
+                }
+            }
+            else
+            {
+                return BadRequest("Nodata");
+            }
+            return Ok(result);
 
-					result = await services.SaveAnswerKnowledge(_table, model);
-				}
-			}
-			else
-			{
-				return BadRequest("Nodata");
-			}
-			return Ok();
-		}
+        }
 
+        [Authorize]
 		[Route("updateAreaKeyId")]
 		[HttpPost]
 		public async Task<IHttpActionResult> updateAreaKeyId(AreaEndPointModel model) {
@@ -124,6 +133,7 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [Route("getEnvironments")]
         [HttpGet]
         public async Task<IHttpActionResult> getEnvironments() {
@@ -137,6 +147,7 @@ namespace easyBotQaNApi.api.Controllers
             }
         }
 
+        [Authorize]
         [Route("crud_environment")]
         [HttpPost]
         public async Task<IHttpActionResult> crud_environment(EnvironmentsModel model) {
@@ -152,7 +163,7 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
-
+        [AllowAnonymous]
         [Route("GetEndPointQaNMaker/{username}")]
         [HttpGet]
         public async Task<IHttpActionResult> GetEndPointQaNMaker(string username)
@@ -161,23 +172,22 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
-
-        [Route("GetOrganization/{OrgUnit}")]
-        [HttpGet]
-        public async Task<IHttpActionResult> GetOrganization(string OrgUnit)
-        {
-            var result = await services.GetOrganization(OrgUnit);
-            return Ok(result);
-        }
-
+        [AllowAnonymous]
         [Route("getMessage")]
-        [HttpGet]
+        [HttpPost]
         public async Task<IHttpActionResult> GetAnswerForUser(GetMessage model)
         {
             var result = await services.GetAnswerForUser(model);
-            return Ok();
+            return Ok(result);
         }
 
+        [AllowAnonymous]
+        [Route("replacetext/{text}")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetReplaceText(string text) {
+            var result = await services.GetReplaceText(text);
+            return Ok(result);
+        }
 
         #endregion methods public
 
@@ -265,9 +275,9 @@ namespace easyBotQaNApi.api.Controllers
 		private static DataTable ConvertToDataTale(Stream stream) {
 			DataTable _table = null;
 			DataTable _newTable = new DataTable();
-			string[] header = new string[] { "Pregunta", "Respuesta" };
+            string[] header = new string[] { "Id", "Pregunta", "Region", "Respuesta" };
 
-			using (var _reader = ExcelReaderFactory.CreateOpenXmlReader(stream))
+            using (var _reader = ExcelReaderFactory.CreateOpenXmlReader(stream))
 			{
 				var _result = _reader.AsDataSet();
 				// Ejemplos de acceso a datos
@@ -291,9 +301,15 @@ namespace easyBotQaNApi.api.Controllers
 						int _cont = 0;
 						foreach (DataColumn column in _newTable.Columns)
 						{
-							_newRow[column.ColumnName] = _table.Rows[_i][_cont];
-							_cont++;
-						}
+                            if (column.ColumnName == "Id")
+                            {
+                                _newRow[column.ColumnName] = _i;
+                            }
+                            else {
+                                _newRow[column.ColumnName] = _table.Rows[_i][_cont];
+                            }
+                            _cont++;
+                        }
 						//Agrega el nuevo row
 						_newTable.Rows.Add(_newRow);
 					}

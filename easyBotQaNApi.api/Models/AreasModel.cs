@@ -14,4 +14,18 @@ namespace easyBotQaNApi.api.Models
     public class AreasKeyIdModel {
         public string KeId { get; set; }
     }
+
+    public class GetAllQuestionByArea {
+        public string Question { get; set; }
+        public string Regions { get; set; }
+        public string Answer { get; set; }
+    }
+
+    public class JsonQuestion {
+        public string strQuestion { get; set; }
+    }
+
+    public class validAreas {
+        public string email { get; set; }
+    }
 }

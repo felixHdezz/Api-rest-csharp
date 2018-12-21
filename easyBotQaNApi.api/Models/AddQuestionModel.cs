@@ -13,4 +13,9 @@ namespace easyBotQaNApi.api.Models
         public int Type { get; set; }
         public int IsActive { get; set; }
     }
+
+    public class QuestionQnAMaker {
+        public string Question { get; set; }
+        public string Answer { get; set; }
+    }
 }

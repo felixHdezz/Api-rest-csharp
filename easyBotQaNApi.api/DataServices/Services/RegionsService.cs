@@ -61,14 +61,6 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
         }
 
-        public async Task<int> AddRegions(CrudRegionsModel model) {
-            using (var _dbContext = new DataBaseContext())
-            {
-                object[] parameters = new object[] { model.Id, model.Region, model.IsActive, model.Type, model.IdAreas };
-                return await _dbContext.ExecuteNonQueryAsync("sp_AddRegion", parameters);
-            }
-        }
-
         public async Task<int> SaveNewRegion(RegionsModel model)
         {
             using (var _dbContext = new DataBaseContext())
@@ -79,11 +71,16 @@ namespace easyBotQaNApi.api.DataServices.Services
         }
 
         public async Task<int> SaveNewQuestion(SaveNewQuestion model) {
+            var _idQuestion = 0;
             using (var _dbContext = new DataBaseContext())
             {
                 object[] parameters = new object[] { model.Question, model.Answer, model.IdArea, model.IdRegions, model.Type };
-                return await _dbContext.ExecuteNonQueryAsync("sp_SaveNewQuestion", parameters);
+                var _result =  await _dbContext.ExecuteReaderAsync("sp_SaveNewQuestion", parameters);
+                while (_result.Read()) {
+                    _idQuestion = Convert.ToInt32(_result[0]);
+                }
             }
+            return _idQuestion;
         }
     }
 }

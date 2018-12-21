@@ -37,13 +37,32 @@ namespace easyBotQaNApi.api.DataServices.Services
             return _knowledgeBases;
         }
 
-        public async Task<int> SaveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model)
+        public async Task<List<QuestionAnswerModel>> SaveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model)
         {
-            using (var _dbContext = new DataBaseContext())
+            var questionAnswerModel = new List<QuestionAnswerModel>();
+            try
             {
-                object[] parameters = new object[] { model.NombreResponsable, model.Apellidos, model.Telefono, model.Email, model.NombreConocimiento, _dTable };
-                return await _dbContext.ExecuteNonQueryAsync("sp_CreateKnowledgeBase", parameters);
+                using (var _dbContext = new DataBaseContext())
+                {
+                    object[] parameters = new object[] { model.NombreResponsable, model.Apellidos, model.Telefono, model.Email, model.NombreConocimiento, _dTable };
+                    var _result = await _dbContext.ExecuteReaderAsync("sp_CreateKnowledgeBase", parameters);
+                    while (_result.Read())
+                    {
+                        questionAnswerModel.Add(new QuestionAnswerModel()
+                        {
+                            id = 0,
+                            answer = _result[1].ToString(),
+                            source = "Editorial",
+                            questions = _result[0].ToString().Split(';'),
+                            metadata = new string[0]
+                        });
+                    }
+                }
             }
+            catch (Exception) {
+                questionAnswerModel = new List<QuestionAnswerModel>();
+            }
+            return questionAnswerModel;
         }
 
         public async Task<List<QuestionAnswerModel>> GetQuestionAnswersByIdArea(string strArea) {
@@ -110,31 +129,38 @@ namespace easyBotQaNApi.api.DataServices.Services
 
         public async Task<List<EnvironmentsModel>> GetEnvironments() {
             List<EnvironmentsModel> _environments = new List<EnvironmentsModel>();
-            using (var _dbContext = new DataBaseContext())
+            try
             {
-                object[] parameters = new object[] { };
-                var _dReader = await _dbContext.ExecuteReaderAsync("sp_GetEnvironments", parameters);
-
-                while (_dReader.Read())
+                using (var _dbContext = new DataBaseContext())
                 {
-                    var environments = new EnvironmentsModel();
-                    environments.Id = Convert.ToInt32(_dReader[0]);
-                    environments.Environment = _dReader[1].ToString();
-                    environments.HostName = _dReader[2].ToString();
-                    environments.EndPointKey = _dReader[3].ToString();
-                    environments.Username = _dReader[4].ToString();
-                    environments.Password = _dReader[5].ToString();
-                    environments.IsActive = Convert.ToInt32(_dReader[6]);
+                    object[] parameters = new object[] { };
+                    var _dReader = await _dbContext.ExecuteReaderAsync("sp_GetEnvironments", parameters);
 
-                    _environments.Add(environments);
+                    while (_dReader.Read())
+                    {
+                        var environments = new EnvironmentsModel();
+                        environments.Id = Convert.ToInt32(_dReader[0]);
+                        environments.Environment = _dReader[1].ToString();
+                        environments.HostName = _dReader[2].ToString();
+                        environments.EndPointKey = _dReader[3].ToString();
+                        environments.Username = _dReader[4].ToString();
+                        environments.Password = _dReader[5].ToString();
+                        environments.IsActive = Convert.ToInt32(_dReader[6]);
+                        environments.Score = _dReader[7].ToString();
+                        _environments.Add(environments);
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                _environments = new List<EnvironmentsModel>();
             }
             return _environments;
         }
 
         public async Task<int> Crud_Environment(EnvironmentsModel model) {
             using (var _dbContext = new DataBaseContext()) {
-                object[] parameters = new object[] { model.Id, model.Environment, model.HostName, model.EndPointKey, model.Username, model.Password, model.IsActive };
+                object[] parameters = new object[] { model.Id, model.Environment, model.HostName, model.EndPointKey, model.Username, model.Password, model.IsActive, model.Score };
                 return await _dbContext.ExecuteNonQueryAsync("sp_CRUD_Environment", parameters);
             }
         }
@@ -164,28 +190,13 @@ namespace easyBotQaNApi.api.DataServices.Services
                         qnaKBId = result.GetString(2),
                         endpointHostName = result.GetString(3),
                         username = result.GetString(4),
-                        password = result.GetString(5)
+                        password = result.GetString(5),
+                        score = result[6].ToString()
                     });
                 }
                 _list_endPoint.endpoints = endpoint;
             }
             return _list_endPoint;
-        }
-
-        public async Task<OrganizationUnitModel> GetOrganization(string OrgUnit) {
-            var _OrganizationU = new OrganizationUnitModel();
-            using (var _dbContext = new DataBaseContext())
-            {
-                object[] parameters = new object[] { OrgUnit };
-                var result = await _dbContext.ExecuteReaderAsync("sp_GetDataOrgUnit", parameters);
-                while (result.Read())
-                {
-                    _OrganizationU.Name = result[0].ToString();
-                    _OrganizationU.Type = result[1].ToString();
-                    _OrganizationU.IsActive = result.GetBoolean(2);
-                }
-            }
-            return _OrganizationU;
         }
 
         public async Task<string> GetAnswerForUser(GetMessage model) {
@@ -194,6 +205,20 @@ namespace easyBotQaNApi.api.DataServices.Services
             {
                 object[] parameters = new object[] { model.IdQuestion, model.Region, model.IdArea };
                 var result = await _dbContext.ExecuteReaderAsync("sp_GetAnswerForUser", parameters);
+                while (result.Read())
+                {
+                    strMessage = result[0].ToString();
+                }
+            }
+            return strMessage;
+        }
+
+        public async Task<string> GetReplaceText(string _text) {
+            var strMessage = string.Empty;
+            using (var _dbContext = new DataBaseContext())
+            {
+                object[] parameters = new object[] { _text };
+                var result = await _dbContext.ExecuteReaderAsync("sp_SustitucionPalabras", parameters);
                 while (result.Read())
                 {
                     strMessage = result[0].ToString();

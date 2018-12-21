@@ -12,6 +12,7 @@ using System.Web.Http;
 
 namespace easyBotQaNApi.api.Controllers
 {
+    
     [RoutePrefix("api/regions")]
     public class RegionsController : ApiController
     {
@@ -26,7 +27,7 @@ namespace easyBotQaNApi.api.Controllers
         public IRegionsService services { get; set; }
 
         #region methods public
-
+        [AllowAnonymous]
         [Route]
         [HttpGet]
         public async Task<IHttpActionResult> Get() {
@@ -40,14 +41,7 @@ namespace easyBotQaNApi.api.Controllers
             }
         }
 
-        [Route("{areas}")]
-        [HttpGet]
-        public async Task<IHttpActionResult> Get(string areas)
-        {
-            //var result = await services.AddRegions(model);
-            return Ok();
-        }
-
+        [Authorize]
         [Route]
         [HttpPost]
         public async Task<IHttpActionResult> Post(RegionsModel model)
@@ -72,6 +66,7 @@ namespace easyBotQaNApi.api.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [Route]
         [HttpPut]
         public async Task<IHttpActionResult> Put(UpdateRegionModel model)
@@ -79,7 +74,6 @@ namespace easyBotQaNApi.api.Controllers
             var result = await services.UpdateRegion(model);
             return Ok(result);
         }
-
 
         #endregion methods public
     }

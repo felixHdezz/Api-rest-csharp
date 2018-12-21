@@ -23,7 +23,7 @@ namespace easyBotQaNApi.api.DataServices.IServices
         /// <param name="_dt"></param>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<int> SaveAnswerKnowledge(DataTable _dt, CreateKnowledgeModel model);
+        Task<List<QuestionAnswerModel>> SaveAnswerKnowledge(DataTable _dTable, CreateKnowledgeModel model);
 
         /// <summary>
         /// Obtiene la lista de las preguntas y respuestas por area
@@ -70,8 +70,8 @@ namespace easyBotQaNApi.api.DataServices.IServices
 
         Task<EndPointsModel> GetEndPointQaNMaker(string username);
 
-        Task<OrganizationUnitModel> GetOrganization(string OrgUnit);
-
         Task<string> GetAnswerForUser(GetMessage model);
+
+        Task<string> GetReplaceText(string _text);
     }
 }

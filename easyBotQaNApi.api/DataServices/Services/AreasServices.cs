@@ -6,12 +6,15 @@ using easyBotQaNApi.api.Models;
 using easyBotQaNApi.api.DataServices.Context;
 using easyBotQaNApi.api.DataServices.IServices;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace easyBotQaNApi.api.DataServices.Services
 {
 	public class AreasServices : IAreasServices
 	{
-		public async Task<List<AreasModel>> getEndPoint()
+        #region public methods
+
+        public async Task<List<AreasModel>> getEndPoint()
 		{
 			var listEndPoint = new List<AreasModel>();
 			using (var _context = new DataBaseContext())
@@ -81,6 +84,61 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
             return _keyIds;
         }
+
+        public async Task<string> GetIdArea(string username)
+        {
+            var _result = string.Empty;
+            using (var _context = new DataBaseContext())
+            {
+                object[] parameters = new object[] { username };
+                var _reader = await _context.ExecuteReaderAsync("sp_GetIdAreaByUser", parameters);
+                while (_reader.Read())
+                {
+                    _result = _reader[0].ToString();
+                }
+            }
+            return _result;
+        }
+
+        public async Task<List<GetAllQuestionByArea>> GetAllQuestionByArea(int idArea, DataTable _data) {
+            var _allQuestion = new List<GetAllQuestionByArea>();
+            using (var _context = new DataBaseContext())
+            {
+                object[] parameters = new object[] { idArea, _data };
+                var _reader = await _context.ExecuteReaderAsync("sp_GetAllQuestion", parameters);
+                while (_reader.Read())
+                {
+                    _allQuestion.Add(new GetAllQuestionByArea
+                    {
+                        Question = _reader[0].ToString(),
+                        Regions = _reader[1].ToString(),
+                        Answer = _reader[2].ToString()
+                    });
+                }
+            }
+            return _allQuestion;
+        }
+
+        public async Task<List<AreasModel>> ValidGetArea(string mail)
+        {
+            var listEndPoint = new List<AreasModel>();
+            using (var _context = new DataBaseContext())
+            {
+                object[] parameters = new object[] { mail };
+                var dReader = await _context.ExecuteReaderAsync("sp_validaUsuarioArea", parameters);
+                while (dReader.Read())
+                {
+                    var area = new AreasModel();
+                    area.id = dReader.GetInt32(0);
+                    area.area = dReader.GetString(1);
+
+                    listEndPoint.Add(area);
+                }
+            }
+            return listEndPoint;
+        }
+
+        #endregion public methods
 
         #region IDisposable Support
 

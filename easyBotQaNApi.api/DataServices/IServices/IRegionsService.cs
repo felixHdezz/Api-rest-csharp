@@ -15,8 +15,6 @@ namespace easyBotQaNApi.api.DataServices.IServices
 
         Task<int> UpdateRegion(UpdateRegionModel model);
 
-        Task<int> AddRegions(CrudRegionsModel model);
-
         Task<int> SaveNewRegion(RegionsModel model);
 
         Task<int> SaveNewQuestion(SaveNewQuestion model);

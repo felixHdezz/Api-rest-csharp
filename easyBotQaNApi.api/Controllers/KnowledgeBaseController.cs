@@ -111,20 +111,20 @@ namespace easyBotQaNApi.api.Controllers
         }
 
         [Authorize]
-		[Route("updateAreaKeyId")]
-		[HttpPost]
-		public async Task<IHttpActionResult> updateAreaKeyId(AreaEndPointModel model) {
-			var result = await services.UpdateAreaKeyId(model);
-			return Ok(result);
-		}
+        [Route("updateAreaKeyId")]
+        [HttpPost]
+        public async Task<IHttpActionResult> updateAreaKeyId(AreaEndPointModel model) {
+            var result = await services.UpdateAreaKeyId(model);
+            return Ok(result);
+        }
 
-		[Route("saveAnswer")]
-		[HttpPost]
-		public async Task<IHttpActionResult> saveAnswer(SaveAnswerModel model)
-		{
-			var result = await services.SaveAnswer(model);
-			return Ok(result);
-		}
+        [Route("saveAnswer")]
+        [HttpPost]
+        public async Task<IHttpActionResult> saveAnswer(SaveAnswerModel model)
+        {
+            var result = await services.SaveAnswer(model);
+            return Ok(result);
+        }
 
         [Route("SaveQuestion")]
         [HttpPost]
@@ -186,6 +186,37 @@ namespace easyBotQaNApi.api.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> GetReplaceText(string text) {
             var result = await services.GetReplaceText(text);
+            return Ok(result);
+        }
+
+        [Authorize]
+        [Route("updateknowledge")]
+        [HttpPost]
+        public async Task<IHttpActionResult> UpdateKnowledge() {
+            byte[] _file = null;
+            var result = new List<QuestionAnswerModel>();
+
+            var nameKnowledge = Convert.ToString(HttpContext.Current.Request["NombreConocimiento"]);
+
+            //Obtiene el archivo excel
+            var files = HttpContext.Current.Request.Files;
+            if (files.Count > 0)
+            {
+                for (int i = 0; i < files.Count; i++)
+                {
+                    var file = files[i];
+                    DataTable _table = null;
+                    BinaryReader reader = new BinaryReader(files[i].InputStream);  //FileUpload1.PostedFile.InputStream)
+                    _file = reader.ReadBytes(files[i].ContentLength);
+
+                    _table = ConvertToDataTale(files[i].InputStream);
+                    result = await services.UpdateKnowledge(nameKnowledge, _table);
+                }
+            }
+            else
+            {
+                return BadRequest("Nodata");
+            }
             return Ok(result);
         }
 

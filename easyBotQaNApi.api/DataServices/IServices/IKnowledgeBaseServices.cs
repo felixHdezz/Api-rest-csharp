@@ -73,5 +73,7 @@ namespace easyBotQaNApi.api.DataServices.IServices
         Task<string> GetAnswerForUser(GetMessage model);
 
         Task<string> GetReplaceText(string _text);
+
+        Task<List<QuestionAnswerModel>> UpdateKnowledge(string name, DataTable dataTable);
     }
 }

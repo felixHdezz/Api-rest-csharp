@@ -226,5 +226,33 @@ namespace easyBotQaNApi.api.DataServices.Services
             }
             return strMessage;
         }
+
+        public async Task<List<QuestionAnswerModel>> UpdateKnowledge(string name, DataTable dataTable) {
+            var questionAnswerModel = new List<QuestionAnswerModel>();
+            try
+            {
+                using (var _dbContext = new DataBaseContext())
+                {
+                    object[] parameters = new object[] { name, dataTable };
+                    var _result = await _dbContext.ExecuteReaderAsync("sp_UpdateQuestionKnowledgeBase", parameters);
+                    while (_result.Read())
+                    {
+                        questionAnswerModel.Add(new QuestionAnswerModel()
+                        {
+                            id = 0,
+                            answer = _result[1].ToString(),
+                            source = "Editorial",
+                            questions = _result[0].ToString().Split(';'),
+                            metadata = new string[0]
+                        });
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                questionAnswerModel = new List<QuestionAnswerModel>();
+            }
+            return questionAnswerModel;
+        }
     }
 }

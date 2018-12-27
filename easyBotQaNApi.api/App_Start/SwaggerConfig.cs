@@ -24,7 +24,7 @@ namespace easyBotQaNApi.api
 					})
                 .EnableSwaggerUi(c =>
                     {
-                        
+                        c.EnableApiKeySupport("Authorization", "oauthToken");
                     });
         }
     }

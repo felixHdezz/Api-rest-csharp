@@ -2,6 +2,9 @@
 using easyBotQaNApi.api.Infrastructure.ContentNegotiation;
 using easyBotQaNApi.api.DataServices.IServices;
 using easyBotQaNApi.api.Infrastructure;
+using Microsoft.IdentityModel.JsonWebTokens;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Cors;
@@ -12,6 +15,7 @@ using SimpleInjector.Integration.WebApi;
 using System.Web.Configuration;
 using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
+using easyBotQaNApi.api.Security;
 
 namespace easyBotQaNApi.api
 {
@@ -41,10 +45,12 @@ namespace easyBotQaNApi.api
 
 			container.Verify();
 			config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+            config.MessageHandlers.Add(new TokenValidationHandler());
+            //// WEB API SERVICES
 
-			//// WEB API SERVICES
-			// Setup Jwt Authentication
-			app.UseCors(CorsOptions.AllowAll);
+
+            // Setup Jwt Authentication
+            app.UseCors(CorsOptions.AllowAll);
 
 			config.RegisterSwagger();
 
